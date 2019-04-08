@@ -29,8 +29,9 @@ const reducer = (store=storage, action) => {
             store.score.current += action.payload;
             return store;
         case "FAIL":
-            store.failTimes++;
-            return store;
+            return {
+                ...store, failTimes: store.failTimes += 1
+            };
         case "INCREMENT_TIMER":
             store.currentTime++;
             return store;

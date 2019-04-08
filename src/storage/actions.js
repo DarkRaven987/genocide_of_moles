@@ -33,4 +33,4 @@ export const liveTimer = () => {
     return {
         type: "INCREMENT_TIMER"
     }
-}
+};
