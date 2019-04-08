@@ -20,11 +20,13 @@ const reducer = (store=storage, action) => {
             store.moleArray[Math.floor(Math.random() * (5))].isMole = true;
             return store;
         case "HARDER":
-            store.gameDifficult++;
-            return store;
+            return {
+                ...store, gameDifficult: action.payload
+            };
         case "EASIER":
-            store.gameDifficult--;
-            return store;
+            return {
+                ...store, gameDifficult: action.payload
+            };
         case "CHANGE_SCORE":
             store.score.current += action.payload;
             return store;

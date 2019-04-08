@@ -20,3 +20,16 @@
     text-align: left;
     margin-left: 10%;
 }
+
+.StartButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 200%;
+}

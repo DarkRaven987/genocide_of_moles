@@ -4,15 +4,10 @@ export const findMole = () => {
     }
 };
 
-export const makeGameHarder = () => {
+export const changeGameDifficulty = (value) => {
     return {
-        type: "HARDER"
-    }
-};
-
-export const makeGameEasier = () => {
-    return {
-        type: "EASIER"
+        type: "HARDER",
+        payload: value
     }
 };
 
