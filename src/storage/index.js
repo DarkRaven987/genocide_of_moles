@@ -10,7 +10,8 @@ const storage = {
     gameDifficult: 1,
     score: { current: 0, max: 100},
     failTimes: 0,
-    currentTime: 0
+    currentTime: 0,
+    updateTime: 4000
 };
 
 const reducer = (store=storage, action) => {
@@ -35,8 +36,40 @@ const reducer = (store=storage, action) => {
                 ...store, failTimes: store.failTimes += 1
             };
         case "INCREMENT_TIMER":
-            store.currentTime++;
-            return store;
+            return {
+                ...store,
+                currentTime:  store.currentTime+10/1000
+            };
+        case "UPDATE_TIME":
+            switch(store.gameDifficult){
+                case 1:
+                    return {
+                        ...store,
+                        updateTime: 4000
+                    };
+                case 2:
+                    return {
+                        ...store,
+                        updateTime: 3500
+                    };
+                case 3:
+                    return {
+                        ...store,
+                        updateTime: 3000
+                    };
+                case 4:
+                    return {
+                        ...store,
+                        updateTime: 2000
+                    };
+                case 5:
+                    return {
+                        ...store,
+                        updateTime: 1000
+                    };
+                default:
+                    return store;
+            }
         default:
             return store;
     }

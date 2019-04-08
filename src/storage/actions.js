@@ -29,3 +29,10 @@ export const liveTimer = () => {
         type: "INCREMENT_TIMER"
     }
 };
+
+export const changeUpdateTime = (value) => {
+    return {
+        type: "UPDATE_TIME",
+        payload: value
+    }
+}

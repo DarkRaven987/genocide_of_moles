@@ -1,8 +1,25 @@
 import React from 'react';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux/es/redux";
 
 import './index.css';
+import {liveTimer, findMole, changeUpdateTime} from '../../storage/actions';
 
 class gameInterface extends React.Component {
+
+    start = () => {
+        const {liveTimer, findMole, changeUpdateTime, state} = this.props;
+        // findMole();
+        // setInterval(() => {
+        //     liveTimer();
+        // }, 10);
+        // changeUpdateTime();
+        // setInterval(()=>{
+        //     findMole()
+        // }, state.updateTime);
+        console.log(this);
+    };
+
     render(){
         const {storage} = this.props;
         return (
@@ -12,16 +29,26 @@ class gameInterface extends React.Component {
                     <h1>Game difficult: {storage.gameDifficult}</h1>
                     <h1>Score: {storage.score.current}/{storage.score.max}point(s)</h1>
                     <h1>You failed: {storage.failTimes} time(s)</h1>
-                    <h1>Time: {storage.currentTime} ms</h1>
+                    <h1>Time: {storage.currentTime.toFixed(2)} s</h1>
                 </div>
-                <button className="StartButton" onClick = { start }>Start</button>
+                <button className="StartButton" onClick = { this.start }>Start</button>
             </div>
         )
     }
 };
 
-const start = () => {
-    console.log("Hello there! It`s time to play the game!");
+const putStateToProps = (state) => {
+  return {
+      state: state
+  }
 };
 
-export default gameInterface;
+const putDispatchToProps = (dispatch) => {
+  return {
+      liveTimer: bindActionCreators(liveTimer, dispatch),
+      findMole: bindActionCreators(findMole, dispatch),
+      changeUpdateTime: bindActionCreators(changeUpdateTime, dispatch)
+  }
+};
+
+export default connect(putStateToProps, putDispatchToProps)(gameInterface);
