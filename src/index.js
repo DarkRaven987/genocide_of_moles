@@ -5,7 +5,10 @@ import {Provider} from 'react-redux';
 
 import './index.css';
 import App from './App';
+import reducer from './storage/index'
 
 const store = createStore(reducer);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store = {store}>
+    <App />
+</Provider>, document.getElementById('root'));
