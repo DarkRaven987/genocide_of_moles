@@ -1,0 +1,21 @@
+
+.Game-Field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: darksalmon;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 50vw;
+}
+
+.onClick-element {
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 4%;
+    height: 30%;
+    width: 23%;
+    background-color: #e5e5e5;
+}

@@ -1,0 +1,6 @@
+.subContainer {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5vw;
+    margin-top: 5vh;
+}

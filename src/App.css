@@ -4,37 +4,3 @@
   padding-top: 5%;
 }
 
-.App-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8ch;
-}
-
-.Game-Field {
-  display: flex;
-  flex-direction: row;
-  background-color: darksalmon;
-  border: 2px solid black;
-  border-radius: 15px;
-  width: 50vw;
-  height: fit-content;
-  margin-left: 10vw;
-  margin-top: 5vh;
-}
-
-.onPlay-zone {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 1%;
-}
-
-.onClick-element {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 3%;
-  height: fit-content;
-  width: fit-content;
-  background-color: #e5e5e5;
-}
