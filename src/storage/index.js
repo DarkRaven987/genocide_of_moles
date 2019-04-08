@@ -15,8 +15,25 @@ const storage = {
 
 const reducer = (store=storage, action) => {
     switch(action.type){
-        case "GENERATE_MOLE_ARRAY":
-            break;
+        case "FIND_MOLE":
+            store.moleArray.map(el => el.isMole = false);
+            store.moleArray[Math.floor(Math.random() * (5))].isMole = true;
+            return store;
+        case "HARDER":
+            store.gameDifficult++;
+            return store;
+        case "EASIER":
+            store.gameDifficult--;
+            return store;
+        case "CHANGE_SCORE":
+            store.score.current += action.payload;
+            return store;
+        case "FAIL":
+            store.failTimes++;
+            return store;
+        case "INCREMENT_TIMER":
+            store.currentTime++;
+            return store;
         default:
             return store;
     }
