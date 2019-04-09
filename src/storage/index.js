@@ -1,4 +1,4 @@
-const storage = {
+export const storage = {
     moleArray: [
         {id: 1, isMole: false},
         {id: 2, isMole: false},
@@ -93,12 +93,12 @@ const reducer = (store=storage, action) => {
                 case 4:
                     return {
                         ...store,
-                        updateTime: 850
+                        updateTime: 1000
                     };
                 case 5:
                     return {
                         ...store,
-                        updateTime: 400
+                        updateTime: 550
                     };
                 default:
                     return store;
