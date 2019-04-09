@@ -3,9 +3,8 @@ import React from 'react';
 import './index.css';
 
 const mainHeader = (props) => {
-    const {incrementFailTimes} = props;
     return(
-        <div className="App-header" onClick={() => incrementFailTimes()}>
+        <div className="App-header">
             GENOCIDE OF MOLES
         </div>
     )
