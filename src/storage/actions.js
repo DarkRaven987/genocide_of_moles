@@ -11,6 +11,20 @@ export const changeGameDifficulty = (value) => {
     }
 };
 
+export const changeGameState = () => {
+    return {
+        type: "CHANGE_GAME_STATE"
+    }
+};
+
+export const changeGameResult = (value) => {
+    return {
+        type: "CHANGE_GAME_RESULT",
+        payload: value
+    }
+};
+
+
 export const changeScore = ( value ) => {
     return {
         type: "CHANGE_SCORE",
@@ -30,9 +44,21 @@ export const liveTimer = () => {
     }
 };
 
+export const annuleTimer = () => {
+    return {
+        type: "ZERO_TIMER"
+    }
+};
+
 export const changeUpdateTime = (value) => {
     return {
         type: "UPDATE_TIME",
         payload: value
+    }
+};
+
+export const resetGlobal = () => {
+    return {
+        type: "RESET_GLOBAL"
     }
 }

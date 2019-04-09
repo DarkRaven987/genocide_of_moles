@@ -1,6 +1,7 @@
 .gameInterface {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     background-color: darksalmon;
     border: 2px solid black;
     border-radius: 15px;
@@ -23,7 +24,6 @@
 
 .StartButton{
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-left: 10%;
     margin-right: 10%;
